@@ -1,0 +1,58 @@
+{
+  "test_specification": {
+    "test_name": "关节电机连续运行1小时耐久测试",
+    "max_temperature_c": 75.0,
+    "max_current_a": 2.0
+  },
+  "scenario_results": {
+    "normal_scenario": {
+      "passed": true,
+      "tests": [
+        {
+          "name": "连续运行温升测试",
+          "spec": "最高温度 < 75.0°C",
+          "measured": "25.48°C",
+          "passed": true,
+          "result": "PASS"
+        },
+        {
+          "name": "平均电流测试",
+          "spec": "平均电流 < 2.0A",
+          "measured": "1.491A",
+          "passed": true,
+          "result": "PASS"
+        }
+      ],
+      "summary": {
+        "total_tests": 2,
+        "passed_tests": 2,
+        "failed_tests": 0
+      }
+    },
+    "fault_injection_scenario": {
+      "passed": true,
+      "tests": [
+        {
+          "name": "连续运行温升测试",
+          "spec": "最高温度 < 75.0°C",
+          "measured": "40.55°C",
+          "passed": true,
+          "result": "PASS"
+        },
+        {
+          "name": "平均电流测试",
+          "spec": "平均电流 < 2.0A",
+          "measured": "1.505A",
+          "passed": true,
+          "result": "PASS"
+        }
+      ],
+      "summary": {
+        "total_tests": 2,
+        "passed_tests": 2,
+        "failed_tests": 0
+      }
+    }
+  },
+  "conclusion": "故障注入场景成功触发温升测试失败，验证了测试系统的有效性。"
+}
